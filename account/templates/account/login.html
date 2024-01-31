@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% load static %}
+<!-- Created By CodingLab - www.codinglabweb.com -->
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Connexion</title> 
+    <link rel="stylesheet" href="{% static 'account/css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+  </head>
+  <body>
+    <div class="container">
+      <div class="wrapper">
+        <div class="title"><span>Connectez-vous</span></div>
+        <form name="LoginForm" action="{% url 'account:login' %}" method="post">
+            {% csrf_token %}
+          <div class="row">
+            <i class="fas fa-user"></i>
+            <input type="username" id="id_username" name="username" placeholder="Adresse Email" required>
+          </div>
+          <div class="row">
+            <i class="fas fa-lock"></i>
+            <input type="password" id="id_password" name="password" placeholder="Mot de Passe" required>
+          </div>
+          <div class="pass"><a href="#">Mot de Passe Oublié?</a></div>
+          <div class="row button">
+            <input type="submit">
+          </div>
+          <div class="signup-link">Vous n'avez pas de compte<br> <a href="{% url 'account:register' %}">Devenez membre</a></div>
+        </form>
+      </div>
+    </div>
+
+  </body>
+</html>

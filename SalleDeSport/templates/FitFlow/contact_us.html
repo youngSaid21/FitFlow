@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<!-- Created By CodingNepal -->
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title>Responsive Contact us Form | CodingNepal</title>
+      <link rel="stylesheet" href="{% static 'css/contact_us.css' %}">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+   <body>
+    <div class="container">
+        <div class="text">Formulaire de Contact</div>
+        <form action="{% url 'SalleDeSport:home' %}">
+           <div class="form-row">
+              <div class="input-data">
+                 <input type="text" required>
+                 <div class="underline"></div>
+                 <label for="">Nom</label>
+              </div>
+              <div class="input-data">
+                 <input type="text" required>
+                 <div class="underline"></div>
+                 <label for="">Prénom</label>
+              </div>
+           </div>
+           <div class="form-row">
+              <div class="input-data">
+                 <input type="email" required>
+                 <div class="underline"></div>
+                 <label for="">Addresse Email</label>
+              </div>
+              <div class="input-data">
+                 <input type="text">
+                 <div class="underline"></div>
+                 <label for="">Site Web</label>
+              </div>
+           </div>
+           <div class="form-row">
+              <div class="input-data textarea">
+                 <textarea rows="8" cols="80" required></textarea>
+                 <br />
+                 <div class="underline"></div>
+                 <label for="">Écrivez votre message</label>
+                 <br />
+                 <div class="form-row submit-btn">
+                    <div class="input-data">
+                       <div class="inner"></div>
+                       <input type="submit" value="Envoyer">
+                    </div>
+                 </div>
+              </div>
+           </div>
+        </form>
+     </div>
+   </body>
+</html>

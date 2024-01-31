@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+{% load static %}
+<!-- Created By CodingLab - www.codinglabweb.com -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Inscription</title> 
+    <link rel="stylesheet" href="{% static 'account/css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+  </head>
+  <body>
+    <div class="container">
+      <div class="wrapper">
+        <div class="title"><span>Créer mon compte Membre</span></div>
+        <form name="LoginForm" action="{% url 'account:register' %}" method="post">
+            {% csrf_token %}
+          <div class="row">
+            <i class="fas fa-user"></i>
+            <input type="last_name" id="id_last_name" name="last_name" placeholder="Nom" required>
+          </div>
+          <div class="row">
+            <i class="fas fa-user"></i>
+            <input type="first_name" id="id_first_name" name="first_name" placeholder="Prénom" required>
+          </div>
+          <div class="row">
+            <i class="fa-duotone fa-phone"></i>
+            <input type="email" id="id_email" name="email" placeholder="Email" required>
+          </div>
+          <div class="row">
+            <i class="fas fa-envelope-open"></i>
+            <input type="phone" id="id_phone" name="phone" placeholder="Téléphone" required>
+          </div>
+          <div class="row">
+            <i class="fas fa-lock"></i>
+            <input type="password" id="id_password1" name="password1" minlength="1" placeholder="Mot de Passe" required>
+          </div>
+          <div class="row">
+            <i class="fas fa-lock"></i>
+            <input type="password" id="id_password2" name="password2" minlength="1" placeholder="Répéter le Mot de Passe" required>
+          </div>
+          <div class="row button">
+            <input type="submit" value="Envoyer">
+          </div>
+          <div class="signup-link">Vous avez deja un compte! <br><a href="{% url 'account:login' %}">Connectez-vous</a></div>
+        </form>
+      </div>
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,83 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/planning.css' %}">
+    
+    <title>Tableau des Cours</title>
+</head>
+<body style="background-image: url({% static 'img/background.png' %});">
+    <header>
+        <h1>Emploi du temps</h1>
+        <p id="inssaf">Bienvenue </p>
+    </header>
+    <br>
+    <br>
+    <section id="planning">
+       
+        <table>
+            <thead>
+                <tr>
+                    <th>Heure</th>
+                    <th>Lundi</th>
+                    <th>Mardi</th>
+                    <th>Mercredi</th>
+                    <th>Jeudi</th>
+                    <th>Vendredi</th>
+                    <th>Samedi</th>
+                    <th>Dimanche</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>08:00 - 10:00</td>
+                    <td id="lundi-08"></td>
+                    <td id="mardi-08"></td>
+                    <td id="mercredi-08"></td>
+                    <td id="jeudi-08"></td>
+                    <td id="vendredi-08"></td>
+                    <td id="samedi-08"></td>
+                    <td id="dimanche-08"></td>
+                </tr>
+                <tr>
+                    <td>10:00 - 12:00</td>
+                    <td id="lundi-010"></td>
+                    <td id="mardi-010"></td>
+                    <td id="mercredi-010"></td>
+                    <td id="jeudi-010"></td>
+                    <td id="vendredi-010"></td>
+                    <td id="samedi-010"></td>
+                    <td id="dimanche-010"></td>
+                </tr>
+                <tr>
+                    <td>14:00 - 16:00</td>
+                    <td id="lundi-0140"></td>
+                    <td id="mardi-0140"></td>
+                    <td id="mercredi-0140"></td>
+                    <td id="jeudi-0140"></td>
+                    <td id="vendredi-0140"></td>
+                    <td id="samedi-0140"></td>
+                    <td id="dimanche-0140"></td>
+                </tr>
+                <tr>
+                    <td>16:00 - 18:00</td>
+                    <td id="lundi-0160"></td>
+                    <td id="mardi-0160"></td>
+                    <td id="mercredi-0160"></td>
+                    <td id="jeudi-0160"></td>
+                    <td id="vendredi-0160"></td>
+                    <td id="samedi-0160"></td>
+                    <td id="dimanche-0160"></td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <button id="modifier-btn" onclick="modifierTableau()">Modifier</button>
+        <br>
+    </section>
+
+    <script src="{% static 'js/script1.js' %}"></script>
+</body>
+</html>

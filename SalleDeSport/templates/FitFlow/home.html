@@ -1,0 +1,265 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>fitflow-LEADER DU FITNESS</title>
+  <!--link CSS File -->
+  <link rel="stylesheet" href="{% static 'css/home.css' %}">
+  <!--link BOXICONS File -->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body style="background-image: url({% static 'img/visiteur/1.jpeg' %});">
+  <!-- Header section starts -->
+  <header class="header" id="header">
+    <div class="header-container">
+      <a href="" class="logo">
+        <i class='bx bx-dumbbell'></i>fit<span>flow</span>
+      </a>
+      <nav class="nav">
+        <ul class="nav-menu">
+          <li><a href="#" class="nav-link active" >Acceuil</a></li>
+          <li><a href="#about" class="nav-link">À propos</a></li>
+          <li><a href="#courses" class="nav-link">Cours</a></li>
+          <li><a href="#trainer" class="nav-link">Trainer</a></li>
+          <li><a href="#schedule" class="nav-link">Planifier</a></li>
+          <li><a href="#blog" class="nav-link">Blog</a></li>
+          <li><a href="{% url 'SalleDeSport:contact' %}" class="nav-link">Contact</a></li>
+          <li><a href="{% url 'account:login' %}" class="nav-link">Connexion</a></li>
+        </ul>
+      </nav>
+      <div class="nav-toggle">
+        <i class='bx bx-menu'></i>
+      </div>
+    </div>
+  </header>
+  <!-- Header section ends -->
+
+  <!-- Home section start -->
+<section class="home" id="home">
+    <div class="home-slider" style="background: url({% static 'img/visiteur/1.jpeg' %}) no-repeat; background-size: cover; background-position: center; height: 100vh;">
+      <div class="content">
+        <h1 class="section-title">fitflow</h1>
+        <h3 class="section-header">for athletic People</h3>
+        <p>Rejoignez-nous chez Passage Fitness, où le luxe et la qualité se marient à une approche holistique du bien-être, transformant votre expérience de remise en forme en un voyage complet vers une vie plus saine et épanouissante.</p>
+        <a href="{% url 'account:login'%}" class="btn">join fitflow today</a>
+      </div>
+    </div>
+  </section>
+  <!-- Home section end -->
+ <!--About Section Start --> 
+ <section class="about" id="about">
+  <div class="about-container">
+    <div class="left">
+    <img src="{% static 'img/visiteur/2.jpeg' %}" alt="">
+    <img src="{% static 'img/visiteur/3.jpeg' %}" alt="">
+    </div>
+    <div class="right">
+      <h1 class="section-title">about us</h1>
+      <h3 class="section-header">the best gym</h3>
+      <p>Bienvenue chez Gym Fit Flow, votre destination ultime pour atteindre vos objectifs de remise en forme de manière optimale. 
+    Nous sommes bien plus qu'une simple salle de sport ; nous sommes une communauté passionnée dédiée à vous accompagner dans votre voyage vers une vie plus saine, 
+    plus énergique et plus équilibrée.</p>
+  
+     <a href="#" class="btn">read more</a>
+    </div>
+  </div>
+ </section>
+  <!--About Section End -->
+  <!-- Courses Section Start -->
+<section class="courses" id="courses">
+  <div class="courses-container">
+    <div class="courses-content">
+      <h1 class="section-title">courses</h1>
+      <h3 class="section-header">we aim to transform your abilities</h3>
+      <div class="courses-box">
+        <!-- Première rangée -->
+        <div class="row">
+          <div class="box">
+            <img src="{% static 'img/visiteur/4.jpeg' %}" alt="">
+            <div class="info">
+              <h3>treadmill</h3>
+              <a href="" class="btn">read more</a>
+            </div>
+          </div>
+          <div class="box">
+            <img src="{% static 'img/visiteur/5.jpeg' %}" alt="">
+            <div class="info">
+              <h3>yoga</h3>
+              <a href="" class="btn">read more</a>
+            </div>
+          </div>
+          <div class="box">
+            <img src="{% static 'img/visiteur/6.jpeg' %}" alt="">
+            <div class="info">
+              <h3>equipment</h3>
+              <a href="" class="btn">read more</a>
+            </div>
+          </div>
+        </div>
+        <!-- Deuxième rangée -->
+        <div class="row">
+          <div class="box">
+            <img src="{% static 'img/visiteur/7.jpeg' %}" alt="">
+            <div class="info">
+              <h3>trainer</h3>
+              <a href="" class="btn">read more</a>
+            </div>
+          </div>
+          <div class="box">
+            <img src="{% static 'img/visiteur/8.jpeg' %}" alt="">
+            <div class="info">
+              <h3>boxing</h3>
+              <a href="" class="btn">read more</a>
+            </div>
+          </div>
+          <div class="box">
+            <img src="{% static 'img/visiteur/9.jpeg' %}" alt="">
+            <div class="info">
+              <h3>weight lifting</h3>
+              <a href="" class="btn">read more</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Courses Section end -->
+<!-- Trainer Section Start -->
+<section class="trainer" id="trainer">
+  <div class="trainer-container">
+    <h1 class="section-title">Coaching</h1>
+    <h3 class="section-header">for athletic People</h3>
+    <p>"Explorez une nouvelle ère de remise en forme avec les coachings de salle de sport FitFlow."</p>
+
+    <div class="trainer-box">
+      <div class="trainer-item">
+        <div class="trainer-img">
+          <img src="{% static 'img/visiteur/10.jpeg' %}" alt="">
+          <div class="inner">
+            <a href=""><i class='bx bxl-facebook'></i></a>
+            <a href=""><i class='bx bxl-twitter'></i></a>
+            <a href=""><i class='bx bxl-instagram'></i></a>
+          </div>
+          <h1>Hatim Mehdi</h1>
+          <p>gym trainer</p>
+        </div>
+      </div>
+
+      <div class="trainer-item">
+        <div class="trainer-img">
+          <img src="{% static 'img/visiteur/11.jpeg' %}" alt="">
+          <div class="inner">
+            <a href=""><i class='bx bxl-facebook'></i></a>
+            <a href=""><i class='bx bxl-twitter'></i></a>
+            <a href=""><i class='bx bxl-instagram'></i></a>
+          </div>
+          <h1>Saleh Saleem</h1>
+          <p>gym trainer</p>
+        </div>
+      </div>
+
+      <div class="trainer-item">
+        <div class="trainer-img">
+          <img src="{% static 'img/visiteur/12.jpeg' %}" alt="">
+          <div class="inner">
+            <a href=""><i class='bx bxl-facebook'></i></a>
+            <a href=""><i class='bx bxl-twitter'></i></a>
+            <a href=""><i class='bx bxl-instagram'></i></a>
+          </div>
+          <h1>Soukaina Jabrou</h1>
+          <p>gym trainer</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- Trainer Section End -->
+<!--Shedule Sectin Start-->
+<section class="schedule" id="schedule">
+  <div class="time-contrainer">
+  <div class="time-text">
+    <div class="left">
+    <h1 class="section-title">timetable</h1>
+    <h3 class="section-header">Optimisez votre parcours de remise en forme avec les plans d'entraînement personnalisés de FitFlow
+    
+    </h3>
+    <p>"Le programme FitFlow de salle de sport offre une approche holistique du bien-être, combinant des séances dynamiques de fitness, de yoga et de méditation. Conçu pour répondre aux besoins variés de chacun, il propose un planning diversifié favorisant la vitalité physique et mentale." </p>
+    <p>Clique pour votre heure adapté </p>
+
+    </div>
+    <div class="right">
+    <a href="" class="btn actve-btn">am</a>
+    <a href="" class="btn">pm</a>
+    </div>
+  </div>
+
+  </div>
+</section>
+
+<!--Shedule Sectin End-->
+<!--Blog Section Start -->
+<section class="blog" id="blog">
+  <div class="blog-container">
+    <h1 class="section-title">our blog</h1>
+    <h3 class="section-header">building a community of athletic</h3>
+    <div class="blog-container">
+      <div class="inner">
+        <div class="blog-img">
+          <img src="{% static 'img/visiteur/16.jpeg' %}" alt="">
+          <p>Avez-vous du mal à trouver du temps pour aller à la salle de sport ? Pas de problème ! Dans cet article, nous allons vous montrer comment créer votre propre entraînement FitFlow à la maison, en utilisant des techniques simples mais efficaces.</p>
+        </div>
+      </div>
+      <div class="inner">
+        <div class="blog-img">
+          <img src="{% static 'img/visiteur/14.jpeg' %}" alt="">
+          <p>Chez FitFlow, nous comprenons que l'alimentation joue un rôle crucial dans votre parcours fitness. Dans cet article, découvrez les aliments essentiels que vous devriez intégrer dans votre régime alimentaire pour maximiser les bénéfices de votre entraînement FitFlow.</p>
+        </div>
+      </div>
+      <div class="inner">
+        <div class="blog-img">
+          <img src="{% static 'img/visiteur/15.jpeg' %}" alt="">
+          <p>Bienvenue sur le blog FitFlow ! Aujourd'hui, nous allons explorer les cinq meilleurs exercices que vous pouvez intégrer dans votre routine de fitness pour sculpter et tonifier votre corps. Ces mouvements simples mais efficaces sont spécialement conçus pour tirer le meilleur parti de votre expérience FitFlow.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--Blog Section End -->
+<!-- Footer Section Start -->
+<footer class="footer" id="contact">
+<div class="footer-container">
+  <a href="" class="logo">
+    <i class='bx bx-dumbbell'></i>fit<span>flow</span>
+  </a>
+<ul>
+  <li><a href="#">home</a></li>
+  <li><a href="#about">about</a></li>
+  <li><a href="#courses">courses</a></li>
+  <li><a href="#schedule">schedule</a></li>
+  <li><a href="#blog">blog</a></li>
+  <li><a href="#contact">contact</a></li>
+</ul>
+
+<h1>Fllow Us</h1>
+<p>2024 All rights reserved &copy; Projet PACTE</p>
+ </div>
+</footer>
+
+
+<!-- Footer Section End -->
+<!-- Scroll Top Button -->
+<div class="up">
+  <i class='bx bx-up-arrow-alt'></i>
+</div>
+
+
+<!-- Scroll Top Button -->
+  <!-- Link JS File -->
+  <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>
