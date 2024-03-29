@@ -82,12 +82,8 @@ WSGI_APPLICATION = "FitFlow.wsgi.application"
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
-        'USER': 'masteruser',
-        'PASSWORD': '12345678',
-        'HOST': 'w3-django-project.cxku60cca9ot.eu-west-3.rds.amazonaws.com',
-        'PORT': '5432'
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": "db.sqlite3",
     }
 }
 

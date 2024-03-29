@@ -38,7 +38,7 @@ class ModePaiement(models.Model):
 	numeroCarte			= models.PositiveBigIntegerField(null = False, verbose_name = "Numéro de la carte")
 	dateExp			 	= models.DateField(verbose_name = "Date d'expiration")
 	cvc 				= models.PositiveSmallIntegerField(null = False, verbose_name = 'CVC') 
-	address 			= models.CharField(null = False, verbose_name = 'Adresse de facturation') 
+	address 			= models.CharField(max_length = 86,null = False, verbose_name = 'Adresse de facturation') 
 
 	def __str__(self):
 		return str(self.numeroCarte)
