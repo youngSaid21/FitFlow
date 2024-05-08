@@ -1,0 +1,31 @@
+{% extends "FitFlow/base.html" %}
+{% load custom_filters %}
+
+{% block title %}Profil{% endblock %}
+
+{% block content %}
+
+<div class="container mt-5">
+  <h2 class="text-center mb-4">Séances disponibles</h2>
+  <div class="row">
+    {% for seance in seances %}
+    <div class="col-md-4 d-flex align-items-stretch">
+      <div class="card w-100">
+        <div class="card-header bg-dark text-white">
+          {{ seance.cours }}
+          
+        </div>
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title"></h5>
+          <p >Heure de début : {{ seance.heureDebut }}</p>
+          <p>Jour de la semaine : {{ seance.get_jour_display  }}
+          </p>
+          <a href="{% url 'SalleDeSport:reserver' membre.id seance.id %}" class="btn btn-primary mt-auto align-self-center">Réserver</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock %}

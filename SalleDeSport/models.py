@@ -5,6 +5,7 @@ from django.contrib import admin
 from phonenumber_field.modelfields import PhoneNumberField
 from django.core.exceptions import ValidationError
 from django.utils.translation import gettext_lazy as _
+from PIL import Image
 
 class Personne(models.Model):
 	nom  	= models.CharField(max_length = 32, null = False, verbose_name = 'Nom')
@@ -20,6 +21,8 @@ class TypeAbonnement(models.Model):
 	nomAbon 			 = models.CharField(max_length = 24, unique = True, null = False, verbose_name = "Nom de l'abonnenment")
 	dureAbon			 = models.PositiveIntegerField(null = False, verbose_name = "Durée (en mois)")
 	prixAbon			 = models.PositiveIntegerField(null = False, verbose_name = 'Prix')
+	description 		 = models.CharField(max_length=64, null=False, verbose_name='Description', default='')
+	avantages 			 = models.TextField(null=False, verbose_name='Avantages', default='')
 
 	def __str__(self):
 		return self.nomAbon
@@ -30,15 +33,11 @@ class TypeAbonnement(models.Model):
 		db_table = 'typeabonnement'
 
 class ModePaiement(models.Model):
-	cartes 				= [
-						    ("Ma", "Mastercard"),
-						    ("Vi", "Visa"),
-	]
-	typeCarte 			= models.CharField(max_length = 24, null = False, verbose_name = "Type du Carte", choices = cartes)
-	numeroCarte			= models.PositiveBigIntegerField(null = False, verbose_name = "Numéro de la carte")
-	dateExp			 	= models.DateField(verbose_name = "Date d'expiration")
-	cvc 				= models.PositiveSmallIntegerField(null = False, verbose_name = 'CVC') 
-	address 			= models.CharField(max_length = 86,null = False, verbose_name = 'Adresse de facturation') 
+	titulaire  				= models.CharField(max_length = 32, null = False, verbose_name = 'Titulaire de la carte')
+	numeroCarte				= models.PositiveBigIntegerField(null = False, unique = True, verbose_name = "Numéro de la carte")
+	dateExp  				= models.CharField(max_length = 5, null = False, verbose_name = 'expiration')
+	cvc 					= models.PositiveSmallIntegerField(null = False, unique = True, verbose_name = 'CVC') 
+
 
 	def __str__(self):
 		return str(self.numeroCarte)
@@ -61,7 +60,7 @@ class Instructeur(Personne):
 
 class Activite(models.Model):
 	nomAcitivite = models.CharField(max_length = 32, unique = True, null = False, verbose_name = 'Nom')
-	DescActivite = models.CharField(max_length = 64, null = False, verbose_name = 'Description')
+	DescActivite = models.CharField(max_length = 200, null = False, verbose_name = 'Description')
 
 
 	class Meta:
@@ -76,20 +75,20 @@ class Activite(models.Model):
 		return self.nomAcitivite
 
 class Cours(models.Model):
-	nomCours = models.CharField(max_length = 32, unique = True, null = False, verbose_name = 'Nom')
-	capacite = models.PositiveIntegerField(null = False, verbose_name = 'Capacité')
-	description = models.CharField(max_length = 64, null = False, verbose_name = 'Description')
-	instructeur = models.ForeignKey(Instructeur, on_delete = models.CASCADE, verbose_name = 'Instructeur')
-	activite = models.ForeignKey(Activite, on_delete = models.CASCADE, verbose_name = 'Activité')
+    nomCours = models.CharField(max_length=32, unique=True, null=False, verbose_name='Nom')
+    capacite = models.PositiveIntegerField(null=False, verbose_name='Capacité')
+    description = models.CharField(max_length=256, null=False, verbose_name='Description')
+    instructeur = models.ForeignKey(Instructeur, on_delete=models.CASCADE, verbose_name='Instructeur')
+    activite = models.ForeignKey(Activite, on_delete=models.CASCADE, verbose_name='Activité')  
+    image = models.ImageField(upload_to='cours_images/', blank=True, null=True)
 
+    def __str__(self):
+        return self.nomCours
 
-	def __str__(self):
-		return self.nomCours
-
-	class Meta:
-		verbose_name = 'Cours'
-		verbose_name_plural = 'Cours'
-		db_table = 'cours'
+    class Meta:
+        verbose_name = 'Cours'
+        verbose_name_plural = 'Cours'
+        db_table = 'cours'
 
 class Club(models.Model):
 	nomClub 	= models.CharField(max_length = 24, unique = True, null = False, verbose_name = 'Nom')
@@ -144,13 +143,22 @@ class ClubActiviteInline(admin.TabularInline):
 		verbose_name = "Club et activ***)"
 
 class Seance(models.Model):
+	jours = [
+			('0', "Lundi"),
+			('1', "Mardi"),
+			('2', "Mercredi"),
+			('3', "Jeudi"),
+			('4', "Vendredi"),
+			('5', "Samedi"),
+			('6', "Dimanche")
+	]
+
 	cours 		= models.ForeignKey(Cours, on_delete = models.CASCADE, verbose_name = 'Cours')
-	dateCours 	= models.DateField(verbose_name = "Date de la séance")
 	heureDebut 	= models.TimeField(verbose_name = "Début de la séance")
-	heureFin 	= models.TimeField(verbose_name = "Fin de la séance")
+	jour 		= models.CharField(max_length=12, choices = jours)
 
 	def __str__(self):
-		return self.cours.nomCours
+		return f"{self.cours.nomCours} {self.heureDebut} {self.jour}"
 
 	class Meta:
 		verbose_name = 'Séance'

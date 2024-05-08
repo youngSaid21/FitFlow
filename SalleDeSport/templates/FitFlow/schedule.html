@@ -1,0 +1,262 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>FitFlow</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Polices personnalisées -->
+    <link href="{% static 'vendor/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+
+    <!-- CSS du thème -->
+    <link href="{% static 'css/creative.css' %}" rel="stylesheet">
+    <link href="{% static 'css/fonts.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/fancybox/jquery.fancybox.css' %}" rel="stylesheet">
+    <!-- Ajouter éventuellement des aides - bouton, vignette et/ou média -->
+    <link rel="stylesheet" href="{% static 'vendor/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5' %}" type="text/css" media="screen" />
+    <link rel="stylesheet" href="{% static 'vendor/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7' %}" type="text/css" media="screen" />
+    <link rel="stylesheet" href="{% static 'vendor/owl-carousel/owl.carousel.css' %}">
+    <link rel="stylesheet" href="{% static 'vendor/owl-carousel/owl.theme.css' %}">
+    
+    <!-- Ajout de la prise en charge HTML5 et de Respond.js pour IE8 -->
+    <!-- AVERTISSEMENT : Respond.js ne fonctionne pas si vous visualisez la page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body id="page-top" class="page page_schedule">
+
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Marque et bascule pour un meilleur affichage sur mobile -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Basculer la navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+               
+            </div>
+
+            <!-- Collecte des liens de navigation, des formulaires et du contenu pour le basculement -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-left">
+                <li>
+                        <a class="page-scroll" href="{% url 'SalleDeSport:home' %}">Accueil</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="{% url 'SalleDeSport:about' %}">À propos</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="{% url 'SalleDeSport:coaches' %}">Instructeurs</a>
+                    </li>
+                    <li class="active">
+                        <a class="page-scroll" href="{% url 'SalleDeSport:schedule' %}">Planning</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="{% url 'SalleDeSport:contact_us' %}">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <!-- SECTION PLANNING -->
+    <section class="schedule">
+        <div class="text-center">
+            <h2>Planning</h2>
+        </div>
+        <div class="buttons text-center">
+            <a href="#" id="choice-all" class="btn btn-primary btn-xl">TOUS</a>
+            <a href="#" id="choice-group" class="btn btn-primary btn-xl">Cours de groupe</a>
+            <a href="#" id="choice-kid" class="btn btn-primary btn-xl">Cours pour enfants</a>
+            <a href="#" id="choice-personal" class="btn btn-primary btn-xl">Entraîneurs personnels</a>
+            <a href="#" id="choice-outdoor" class="btn btn-primary btn-xl">Cours en extérieur</a>
+        </div>
+        <div class="container">
+            <table class="table">
+              <thead class="hidden-xs">
+                <tr>
+                  <th></th>
+                  <th>Lundi</th>
+                  <th>Mardi</th>
+                  <th>Mercredi</th>
+                  <th>Jeudi</th>
+                  <th>Vendredi</th>
+                  <th>Samedi</th>
+                  <th>Dimanche</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th class="row hidden-sm hidden-lg hidden-md">Monday</th>
+                  <th scope="row">7:00 - 7:55</th>
+                  <td><div class="group">YOGA <span>7:00 - 7:55</span></div></td>
+                  <td><div class="kid">outdoor <span>7:00 - 7:55</span></div></td>
+                  <td><div class="group">outdoor <span>7:00 - 7:55</span></div></td>
+                  <td><div class="personal">YOGA <span>7:00 - 7:55</span></div></td>
+                  <td><div class="personal">cycling <span>7:00 - 7:55</span></div></td>
+                  <td><div class="kid">box <span>7:00 - 7:55</span></div></td>
+                  <td><div class="outdoor">cycling <span>7:00 - 7:55</span></div></td>
+                </tr>
+                <tr>
+                  <th class="row hidden-sm hidden-lg hidden-md">Monday</th>
+                  <th scope="row">8:00 - 8:55</th>
+                  <td><div class="personal">outdoor <span>7:00 - 7:55</span></div></td>
+                  <td><div class="group">YOGA <span>7:00 - 7:55</span></div></td>
+                  <td><div class="outdoor">outdoor <span>7:00 - 7:55</span></div></td>
+                  <td><div class="outdoor">YOGA <span>7:00 - 7:55</span></div></td>
+                  <td><div class="kid">YOGA <span>7:00 - 7:55</span></div></td>
+                  <td><div class="outdoor">box <span>7:00 - 7:55</span></div></td>
+                  <td><div class="outdoor">cycling <span>7:00 - 7:55</span></div></td>
+                </tr>
+                <tr>
+                  <th class="row hidden-sm hidden-lg hidden-md">Monday</th>
+                  <th scope="row">9:00 - 9:55</th>
+                  <td><div class="personal">pilates <span>7:00 - 7:55</span></div></td>
+                  <td><div class="outdoor">YOGA <span>7:00 - 7:55</span></div></td>
+                  <td><div class="group">outdoor <span>7:00 - 7:55</span></div></td>
+                  <td><div class="kid">YOGA <span>7:00 - 7:55</span></div></td>
+                  <td><div class="outdoor">YOGA <span>7:00 - 7:55</span></div></td>
+                  <td><div class="outdoor">box <span>7:00 - 7:55</span></div></td>
+                  <td><div class="group">cycling <span>7:00 - 7:55</span></div></td>
+                </tr>
+                <tr>
+                  <th class="row hidden-sm hidden-lg hidden-md">Monday</th>
+                  <th scope="row">10:00 - 10:55</th>
+                  <td><div class="outdoor">cycling <span>7:00 - 7:55</span></div></td>
+                  <td><div class="personal">pilates <span>7:00 - 7:55</span></div></td>
+                  <td><div class="group">outdoor <span>7:00 - 7:55</span></div></td>
+                  <td><div class="group">YOGA <span>7:00 - 7:55</span></div></td>
+                  <td><div class="outdoor">pilates <span>7:00 - 7:55</span></div></td>
+                  <td><div class="kid">box <span>7:00 - 7:55</span></div></td>
+                  <td><div class="group">pilates <span>7:00 - 7:55</span></div></td>
+                </tr>
+                <tr>
+                  <th class="row hidden-sm hidden-lg hidden-md">Monday</th>
+                  <th scope="row">11:00 - 12:55</th>
+                  <td><div class="personal">outdoor <span>7:00 - 7:55</span></div></td>
+                  <td><div class="group">YOGA <span>7:00 - 7:55</span></div></td>
+                  <td><div class="outdoor">outdoor <span>7:00 - 7:55</span></div></td>
+                  <td><div class="outdoor">YOGA <span>7:00 - 7:55</span></div></td>
+                  <td><div class="kid">YOGA <span>7:00 - 7:55</span></div></td>
+                  <td><div class="outdoor">box <span>7:00 - 7:55</span></div></td>
+                  <td><div class="outdoor">cycling <span>7:00 - 7:55</span></div></td>
+                </tr>
+                <tr>
+                  <th class="row hidden-sm hidden-lg hidden-md">Monday</th>
+                  <th scope="row">13:00 - 14:55</th>
+                  <td><div class="outdoor">cycling <span>13:00 - 13:55</span></div></td>
+                  <td><div class="personal">pilates <span>13:00 - 13:55</span></div></td>
+                  <td><div class="group">outdoor <span>13:00 - 13:55</span></div></td>
+                  <td><div class="group">YOGA <span>13:00 - 13:55</span></div></td>
+                  <td><div class="outdoor">pilates <span>13:00 - 13:55</span></div></td>
+                  <td><div class="kid">box <span>13:00 - 13:55</span></div></td>
+                  <td><div class="group">pilates <span>13:00 - 13:55</span></div></td>
+                </tr>
+                <tr>
+                  <th class="row hidden-sm hidden-lg hidden-md">Monday</th>
+                  <th scope="row">15:00 - 15:55</th>
+                  <td><div class="group">YOGA <span>15:00 - 15:55</span></div></td>
+                  <td><div class="kid">outdoor <span>15:00 - 15:55</span></div></td>
+                  <td><div class="group">outdoor <span>15:00 - 15:55</span></div></td>
+                  <td><div class="personal">YOGA <span>15:00 - 15:55</span></div></td>
+                  <td><div class="personal">cycling <span>15:00 - 15:55</span></div></td>
+                  <td><div class="kid">box <span>15:00 - 7:55</span></div></td>
+                  <td><div class="outdoor">cycling <span>15:00 - 15:55</span></div></td>
+                </tr>
+              </tbody>
+            </table>
+        </div>
+    </section>
+    <!-- SECTION PLANNING -->
+    <!-- Section des articles -->
+    <section class="articles">
+        <div class="text-center">
+            <h2>Événements à venir</h2>
+        </div>
+        <div class="container">
+            <div class="row">
+                <!-- Les articles suivent le même schéma -->
+            </div>
+        </div>
+    </section>
+    <!-- Section des articles -->
+    <section class="about_event">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8">
+            <img src="{% static 'img/big_image3.jpg' %}" class="img-responsive" alt="">
+          </div>
+          <div class="col-md-4">
+            <div class="info">
+                <h4>Événement à venir</h4>
+                <span><b>Date :</b> 10/12/2016</span>
+                <span><b>Lieu :</b> Notre club de fitness</span>
+                <p>Mon coach, enseignant ou mentor préféré et ce qu'il m'a appris</p>
+                <p>J'ai eu la chance d'avoir de nombreux grands coachs au cours de mes activités sportives. Quand on est jeune, on ne réalise pas vraiment combien ces personnes sacrifient en termes de temps bénévole, d'argent et d'énergie pour aider les enfants / les athlètes à devenir des membres productifs de la société.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- SECTION À PROPOS -->
+
+    
+
+    <section class="bottom_links">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-6 links">
+                <p>C'est bien de partager :</p>
+                <ul>
+                    <li><img src="{% static 'img/social1.png' %}" alt=""></li>
+                    <li><img src="{% static 'img/social2.png' %}" alt=""></li>
+                    <li><img src="{% static 'img/social3.png' %}" alt=""></li>
+                    <li><img src="{% static 'img/social4.png' %}" alt=""></li>
+                    <li><img src="{% static 'img/social5.png' %}" alt=""></li>
+                    <li><img src="{% static 'img/social6.png' %}" alt=""></li>
+                </ul>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                <p>Élu "le meilleur club de fitness de la ville"</p>
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js' %}"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'vendor/fancybox/jquery.mousewheel-3.0.6.pack.js' %}"></script>
+    <script type="text/javascript" src="{% static 'vendor/fancybox/jquery.fancybox.pack.js?v=2.1.5' %}"></script>
+    <script type="text/javascript" src="{% static 'vendor/owl-carousel/owl.carousel.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'vendor/fancybox/jquery.fancybox.js' %}"></script>
+    <script type="text/javascript" src="{% static 'vendor/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5' %}"></script>
+    <script type="text/javascript" src="{% static 'vendor/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6' %}"></script>
+    <script type="text/javascript" src="{% static 'vendor/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7' %}"></script>
+
+    <!-- JavaScript du thème -->
+    <script src="{% static 'js/creative.js' %}"></script>
+
+</body>
+
+</html>

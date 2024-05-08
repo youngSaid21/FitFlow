@@ -28,22 +28,28 @@ class ModelInvite(admin.ModelAdmin):
 		("Séance d'essai", {'fields': ['seanceEssai']}),
 	]
 
+
 class ModelSeance(admin.ModelAdmin):
-	list_display = ('cours','dateCours','heureDebut','heureFin')
+
+
+	list_display = ('cours','heureDebut','jour')
 	list_per_page = 20
+	fieldsets = [
+		('Planification', {'fields': ['cours','heureDebut','jour']}),
+	]
 	inlines = [
     	ReservationCoursInline,
     ]
-	exclude = ["cours"]
+	
 
 
 class ModelTypeAbonnement(admin.ModelAdmin):
-	list_display = ('nomAbon', 'dureAbon', 'prixAbon',)
+	list_display = ('nomAbon', 'dureAbon', 'prixAbon','description', 'avantages')
 	list_filter = ('nomAbon',)
 	list_per_page = 20
 
 	fieldsets = [
-		("Type d'abonnement", {'fields': ['nomAbon', 'dureAbon', 'prixAbon',]}),
+		("Type d'abonnement", {'fields': ['nomAbon', 'dureAbon', 'prixAbon','description', 'avantages']}),
 	]
 
 class ModelInstructeur(admin.ModelAdmin):
@@ -101,10 +107,10 @@ class ModelCours(admin.ModelAdmin):
     ]
 
 class ModePaiementModel(admin.ModelAdmin):
-	list_display = ('typeCarte','numeroCarte','cvc','dateExp','address')
+	list_display = ('titulaire','numeroCarte','dateExp','cvc')
 
 	fieldsets = [
-		('Mode de Paiement', {'fields': ['typeCarte','numeroCarte','cvc','dateExp','address']}),
+		('Mode de Paiement', {'fields': ['titulaire','numeroCarte','dateExp','cvc']}),
 	]
 
 admin.site.register(Membre,ModelMembre)
@@ -117,4 +123,3 @@ admin.site.register(Club, ModelClub)
 admin.site.register(Equipement, ModelEquipement)
 admin.site.register(Cours,ModelCours)
 admin.site.register(ModePaiement, ModePaiementModel)
-#admin.site.register(ClubActiviteInline)

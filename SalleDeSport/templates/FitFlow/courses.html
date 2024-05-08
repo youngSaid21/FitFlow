@@ -1,0 +1,62 @@
+{% extends "FitFlow/base.html" %}
+
+{% block title %}Profil{% endblock %}
+
+{% block content %}
+
+<!-- Section-->
+        <section class="py-5">
+        	<center><h2>Catalogue des cours</h2></center>
+            <div class="container px-4 px-lg-5 mt-5">
+                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+
+
+
+           			{% for cour in cours%}
+
+           			{% if cour.capacite > cour.membres.count %}
+                    <div class="col mb-5">
+                        <div class="card h-100">
+                        	<!-- Sale badge-->
+                        	
+                        		
+                        	
+                        	{% if cour in coursInscrits %}
+                            <div class="badge bg-white position-absolute" style="top: 0.5rem; right: 0.5rem; color: green;">Déja inscrit</div>
+                            {% endif %}
+                            <!-- Product image-->
+                            <img class="card-img-top" width="300" height="150" src="https://digitaldefynd.com/wp-content/uploads/2020/05/Best-Fitness-course-tutorial-class-certification-training-online-scaled.jpg" alt="..." />
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">{{ cour.nomCours}}</h5>
+                                    <!-- Product price-->
+                                   
+                                    {{ cour.description }}
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="{% url 'SalleDeSport:course' membre.id cour.id %}">Voir plus</a></div>
+                            </div>
+
+                            
+                            
+                        </div>
+                    </div>
+                    {% endif%}
+
+
+                    {% endfor %}
+
+
+                    
+
+
+
+
+
+
+{% endblock %}
+

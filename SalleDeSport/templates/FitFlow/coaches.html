@@ -1,0 +1,213 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>FitFlow</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Polices personnalisées -->
+    <link href="{% static 'vendor/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+
+    <!-- CSS du thème -->
+    <link href="{% static 'css/creative.css' %}" rel="stylesheet">
+    <link href="{% static 'css/fonts.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/fancybox/jquery.fancybox.css' %}" rel="stylesheet">
+    <!-- Ajouter éventuellement des aides - bouton, vignette et/ou média -->
+    <link rel="stylesheet" href="{% static 'vendor/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5' %}" type="text/css" media="screen" />
+    <link rel="stylesheet" href="{% static 'vendor/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7' %}" type="text/css" media="screen" />
+    <link rel="stylesheet" href="{% static 'vendor/owl-carousel/owl.carousel.css' %}">
+    <link rel="stylesheet" href="{% static 'vendor/owl-carousel/owl.theme.css' %}">
+    
+    <!-- Support HTML5 Shim et Respond.js pour le support d'IE8 des éléments HTML5 et des requêtes multimédias -->
+    <!-- AVERTISSEMENT : Respond.js ne fonctionne pas si vous visualisez la page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body id="page-top" class="page coaches">
+
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Marque et bascule regroupés pour un meilleur affichage mobile -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Basculer la navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+                
+            </div>
+
+            <!-- Collecte des liens de navigation, des formulaires et d'autres contenus pour le basculement -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-left">
+                <li>
+                        <a class="page-scroll" href="{% url 'SalleDeSport:home' %}">Accueil</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="{% url 'SalleDeSport:about' %}">À propos</a>
+                    </li>
+                    <li class="active">
+                        <a class="page-scroll" href="{% url 'SalleDeSport:coaches' %}">Instructeurs</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="{% url 'SalleDeSport:schedule' %}">Planning</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="{% url 'SalleDeSport:contact_us' %}">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <!-- SECTION DES ENTRAÎNEURS -->
+    <section class="coaches">
+        <div class="text-center">
+            <h2>Entraînement du jour</h2>
+        </div>
+        <div class="buttons text-center">
+          <a href="#about" class="btn btn-primary btn-xl page-scroll">Entraîneurs de fitness en groupe</a>
+          <a href="#about" class="btn btn-primary btn-xl page-scroll">Entraîneurs personnels</a>
+        </div>
+
+        <div class="container">
+            <div id="owl-example" class="owl-carousel slider1">
+                <div class="slide"><a href="#"><p>Homme guérilla</p><span>Certificat de niveau 1</span><img src="{% static 'img/team1.jpg' %}" class="img-responsive"></a></div>
+                <div class="slide"><a href="#"><p>Homme guérilla</p><span>Certificat de niveau 1</span><img src="{% static 'img/team2.jpg' %}" class="img-responsive"></a></div>
+                <div class="slide"><a href="#"><p>Homme guérilla</p><span>Certificat de niveau 1</span><img src="{% static 'img/team3.jpg' %}" class="img-responsive"></a></div>
+                <div class="slide"><a href="#"><p>Homme guérilla</p><span>Certificat de niveau 1</span><img src="{% static 'img/team2.jpg' %}" class="img-responsive"></a></div>
+                <div class="slide"><a href="#"><p>Homme guérilla</p><span>Certificat de niveau 1</span><img src="{% static 'img/team3.jpg' %}" class="img-responsive"></a></div>
+                <div class="slide"><a href="#"><p>Homme guérilla</p><span>Certificat de niveau 1</span><img src="{% static 'img/team1.jpg' %}" class="img-responsive"></a></div>
+                <div class="slide"><a href="#"><p>Homme guérilla</p><span>Certificat de niveau 1</span><img src="{% static 'img/team3.jpg' %}" class="img-responsive"></a></div>
+                <div class="slide"><a href="#"><p>Homme guérilla</p><span>Certificat de niveau 1</span><img src="{% static 'img/team2.jpg' %}" class="img-responsive"></a></div>
+                <div class="slide"><a href="#"><p>Homme guérilla</p><span>Certificat de niveau 1</span><img src="{% static 'img/team1.jpg' %}" class="img-responsive"></a></div>
+            </div>
+
+        </div>
+    </section>
+    <section class="about_coach">
+      <div class="text-center">
+            <h1>Entraîneur John Doe</h1>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 col-sm-4">
+            <img src="{% static 'img/coach.jpg' %}" class="img-responsive" alt="">
+          </div>
+          <div class="col-md-8 col-sm-8">
+            <div class="info">
+              <p><b>Parcours athlétique</b></p>
+              <p>À l'école secondaire, j'ai joué au soccer, au rugby, au golf et au basketball.</p>
+              <p>Le soccer était ma principale activité pendant 20 ans et j'ai eu la chance de jouer dans l'équipe varsity de l'Université Simon Fraser.</p>
+              <p>En 2004, j'ai eu un coup de foudre pour la boxe après m'être rétabli d'un terrible accident de voiture. J'ai compétitionné en amateur pendant quatre ans et mon point culminant a été de remporter le championnat provincial des gants de bronze chez les poids moyens en 2006. J'ai ensuite entraîné au célèbre Astoria Boxing Club pendant cinq ans et j'ai eu des athlètes médaillés aux niveaux provincial et national. Pendant ma pratique de la boxe, j'ai découvert le CrossFit et ce fut un véritable coup de foudre. C'est rapidement devenu un sport pour moi et j'ai obtenu ma qualification en tant qu'athlète régional dans l'Ouest canadien en 2010, 2011, 2012 et 2013.</p>
+              <p><b>Mon coach, enseignant ou mentor préféré et ce qu'ils m'ont enseigné :</b></p>
+              <p>J'ai eu la chance d'avoir de nombreux grands coaches au cours de mes poursuites athlétiques. Quand on est jeune, on ne réalise pas vraiment combien ces personnes sacrifient en termes de temps, d'argent et d'énergie pour aider les enfants / athlètes à devenir des membres productifs de la société. Plus je vieillis, plus j'apprécie le type d'engagement que cela nécessite et l'obligation que je ressens maintenant de redonner.</p>
+              <p>J'ai eu la chance d'avoir de nombreux grands coaches au cours de mes poursuites athlétiques. Quand on est jeune, on ne réalise pas vraiment combien ces personnes sacrifient en termes de temps, d'argent et d'énergie pour aider les enfants / athlètes à devenir des membres productifs de la société. Plus je vieillis, plus j'apprécie le type d'engagement que cela nécessite et l'obligation que je ressens maintenant de redonner. Mon coach préféré était mon entraîneur de basketball au lycée, M. Wayne Naka. Il n'avait en fait jamais entraîné au basketball mais avait deux fils, Ross et Paul, qui avaient grandi en jouant ce sport. M. Naka venait d'un milieu de hockey ; il avait joué dans le hockey junior majeur.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- SECTION DES ENTRAÎNEURS -->
+
+    <section class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="title">
+                        <div class="icon"><img src="{% static 'img/map_icon1.png' %}" alt=""></div>
+                        <h3>Où <span>nous trouver</span></h3>
+                    </div>
+                    <p>
+                        <span>Casablanca</span>
+                        <span>Boulevard Ghandi</span>
+                        <span>Rue 12, 22000</span>
+                    </p>
+                    <p>
+                        <span>téléphone : <b>+4235 4366 13</b></span>
+                        <span>e-mail : <b>exemple@exemple.com</b></span>
+                    </p>
+                    <p>site web : http://www.votreclubforme.com</p>
+                </div>
+                <div class="col-md-3">
+                    <div class="title">
+                        <div class="icon"><img src="{% static 'img/map_icon2.png' %}" alt=""></div>
+                        <h3>carte <span>cadeau</span></h3>
+                    </div>
+                    <p>Voici un cadeau qui déchire vraiment. Saviez-vous qu'une grande partie de la recherche en psychologie prouve que les expériences rendent les gens plus heureux que les possessions ?</p>
+                </div>
+                <div class="col-md-3">
+                    <div class="title">
+                        <div class="icon"><img src="{% static 'img/map_icon3.png' %}" alt=""></div>
+                        <h3>Quand <span>nous visiter</span></h3>
+                    </div>
+                    <p>Commençons !</p>
+                    <p>Visitez pendant les heures de présence du personnel ou appelez pour prendre un rendez-vous dès aujourd'hui !</p>
+                </div>
+                <div class="col-md-3">
+                    <div class="title">
+                        <div class="icon"><img src="{% static 'img/map_icon4.png' %}" alt=""></div>
+                        <h3>gratuit <span>visite gratuite</span></h3>
+                    </div>
+                    <p>Chaque membre reçoit un plan de démarrage personnalisé gratuit lorsqu'il adhère. Notre personnel amical et professionnel est formé pour vous aider tout au long de votre parcours de remise en forme.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="bottom_links">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-6 links">
+                    <p>c'est bien de partager :</p>
+                    <ul>
+                        <li><img src="{% static 'img/social1.png' %}" alt=""></li>
+                        <li><img src="{% static 'img/social2.png' %}" alt=""></li>
+                        <li><img src="{% static 'img/social3.png' %}" alt=""></li>
+                        <li><img src="{% static 'img/social4.png' %}" alt=""></li>
+                        <li><img src="{% static 'img/social5.png' %}" alt=""></li>
+                        <li><img src="{% static 'img/social6.png' %}" alt=""></li>
+                    </ul>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <p>élu « meilleur club de fitness de la ville »</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js' %}"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'vendor/fancybox/jquery.mousewheel-3.0.6.pack.js' %}"></script>
+    <script type="text/javascript" src="{% static 'vendor/fancybox/jquery.fancybox.pack.js?v=2.1.5' %}"></script>
+    <script type="text/javascript" src="{% static 'vendor/owl-carousel/owl.carousel.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'vendor/fancybox/jquery.fancybox.js' %}"></script>
+    <script type="text/javascript" src="{% static 'vendor/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5' %}"></script>
+    <script type="text/javascript" src="{% static 'vendor/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6' %}"></script>
+    <script type="text/javascript" src="{% static 'vendor/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7' %}"></script>
+
+    <!-- JavaScript du thème -->
+    <script src="{% static 'js/creative.js' %}"></script>
+
+</body>
+
+</html>

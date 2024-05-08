@@ -1,265 +1,460 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>fitflow-LEADER DU FITNESS</title>
-  <!--link CSS File -->
-  <link rel="stylesheet" href="{% static 'css/home.css' %}">
-  <!--link BOXICONS File -->
-  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-</head>
-<body style="background-image: url({% static 'img/visiteur/1.jpeg' %});">
-  <!-- Header section starts -->
-  <header class="header" id="header">
-    <div class="header-container">
-      <a href="" class="logo">
-        <i class='bx bx-dumbbell'></i>fit<span>flow</span>
-      </a>
-      <nav class="nav">
-        <ul class="nav-menu">
-          <li><a href="#" class="nav-link active" >Acceuil</a></li>
-          <li><a href="#about" class="nav-link">À propos</a></li>
-          <li><a href="#courses" class="nav-link">Cours</a></li>
-          <li><a href="#trainer" class="nav-link">Trainer</a></li>
-          <li><a href="#schedule" class="nav-link">Planifier</a></li>
-          <li><a href="#blog" class="nav-link">Blog</a></li>
-          <li><a href="{% url 'SalleDeSport:contact' %}" class="nav-link">Contact</a></li>
-          <li><a href="{% url 'account:login' %}" class="nav-link">Connexion</a></li>
-        </ul>
-      </nav>
-      <div class="nav-toggle">
-        <i class='bx bx-menu'></i>
-      </div>
-    </div>
-  </header>
-  <!-- Header section ends -->
 
-  <!-- Home section start -->
-<section class="home" id="home">
-    <div class="home-slider" style="background: url({% static 'img/visiteur/1.jpeg' %}) no-repeat; background-size: cover; background-position: center; height: 100vh;">
-      <div class="content">
-        <h1 class="section-title">fitflow</h1>
-        <h3 class="section-header">for athletic People</h3>
-        <p>Rejoignez-nous chez Passage Fitness, où le luxe et la qualité se marient à une approche holistique du bien-être, transformant votre expérience de remise en forme en un voyage complet vers une vie plus saine et épanouissante.</p>
-        <a href="{% url 'account:login'%}" class="btn">join fitflow today</a>
-      </div>
-    </div>
-  </section>
-  <!-- Home section end -->
- <!--About Section Start --> 
- <section class="about" id="about">
-  <div class="about-container">
-    <div class="left">
-    <img src="{% static 'img/visiteur/2.jpeg' %}" alt="">
-    <img src="{% static 'img/visiteur/3.jpeg' %}" alt="">
-    </div>
-    <div class="right">
-      <h1 class="section-title">about us</h1>
-      <h3 class="section-header">the best gym</h3>
-      <p>Bienvenue chez Gym Fit Flow, votre destination ultime pour atteindre vos objectifs de remise en forme de manière optimale. 
-    Nous sommes bien plus qu'une simple salle de sport ; nous sommes une communauté passionnée dédiée à vous accompagner dans votre voyage vers une vie plus saine, 
-    plus énergique et plus équilibrée.</p>
-  
-     <a href="#" class="btn">read more</a>
-    </div>
-  </div>
- </section>
-  <!--About Section End -->
-  <!-- Courses Section Start -->
-<section class="courses" id="courses">
-  <div class="courses-container">
-    <div class="courses-content">
-      <h1 class="section-title">courses</h1>
-      <h3 class="section-header">we aim to transform your abilities</h3>
-      <div class="courses-box">
-        <!-- Première rangée -->
-        <div class="row">
-          <div class="box">
-            <img src="{% static 'img/visiteur/4.jpeg' %}" alt="">
-            <div class="info">
-              <h3>treadmill</h3>
-              <a href="" class="btn">read more</a>
-            </div>
-          </div>
-          <div class="box">
-            <img src="{% static 'img/visiteur/5.jpeg' %}" alt="">
-            <div class="info">
-              <h3>yoga</h3>
-              <a href="" class="btn">read more</a>
-            </div>
-          </div>
-          <div class="box">
-            <img src="{% static 'img/visiteur/6.jpeg' %}" alt="">
-            <div class="info">
-              <h3>equipment</h3>
-              <a href="" class="btn">read more</a>
-            </div>
-          </div>
-        </div>
-        <!-- Deuxième rangée -->
-        <div class="row">
-          <div class="box">
-            <img src="{% static 'img/visiteur/7.jpeg' %}" alt="">
-            <div class="info">
-              <h3>trainer</h3>
-              <a href="" class="btn">read more</a>
-            </div>
-          </div>
-          <div class="box">
-            <img src="{% static 'img/visiteur/8.jpeg' %}" alt="">
-            <div class="info">
-              <h3>boxing</h3>
-              <a href="" class="btn">read more</a>
-            </div>
-          </div>
-          <div class="box">
-            <img src="{% static 'img/visiteur/9.jpeg' %}" alt="">
-            <div class="info">
-              <h3>weight lifting</h3>
-              <a href="" class="btn">read more</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- Courses Section end -->
-<!-- Trainer Section Start -->
-<section class="trainer" id="trainer">
-  <div class="trainer-container">
-    <h1 class="section-title">Coaching</h1>
-    <h3 class="section-header">for athletic People</h3>
-    <p>"Explorez une nouvelle ère de remise en forme avec les coachings de salle de sport FitFlow."</p>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-    <div class="trainer-box">
-      <div class="trainer-item">
-        <div class="trainer-img">
-          <img src="{% static 'img/visiteur/10.jpeg' %}" alt="">
-          <div class="inner">
-            <a href=""><i class='bx bxl-facebook'></i></a>
-            <a href=""><i class='bx bxl-twitter'></i></a>
-            <a href=""><i class='bx bxl-instagram'></i></a>
-          </div>
-          <h1>Hatim Mehdi</h1>
-          <p>gym trainer</p>
-        </div>
-      </div>
+    <title>FitFlow</title>
 
-      <div class="trainer-item">
-        <div class="trainer-img">
-          <img src="{% static 'img/visiteur/11.jpeg' %}" alt="">
-          <div class="inner">
-            <a href=""><i class='bx bxl-facebook'></i></a>
-            <a href=""><i class='bx bxl-twitter'></i></a>
-            <a href=""><i class='bx bxl-instagram'></i></a>
-          </div>
-          <h1>Saleh Saleem</h1>
-          <p>gym trainer</p>
-        </div>
-      </div>
+    <!-- Bootstrap Core CSS -->
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
 
-      <div class="trainer-item">
-        <div class="trainer-img">
-          <img src="{% static 'img/visiteur/12.jpeg' %}" alt="">
-          <div class="inner">
-            <a href=""><i class='bx bxl-facebook'></i></a>
-            <a href=""><i class='bx bxl-twitter'></i></a>
-            <a href=""><i class='bx bxl-instagram'></i></a>
-          </div>
-          <h1>Soukaina Jabrou</h1>
-          <p>gym trainer</p>
-        </div>
-      </div>
+    <!-- Custom Fonts -->
+    <link href="{% static 'vendor/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
 
-    </div>
-  </div>
-</section>
-<!-- Trainer Section End -->
-<!--Shedule Sectin Start-->
-<section class="schedule" id="schedule">
-  <div class="time-contrainer">
-  <div class="time-text">
-    <div class="left">
-    <h1 class="section-title">timetable</h1>
-    <h3 class="section-header">Optimisez votre parcours de remise en forme avec les plans d'entraînement personnalisés de FitFlow
+    <!-- Theme CSS -->
+    <link href="{% static 'css/creative.css'  %}" rel="stylesheet">
+    <link href="{% static 'css/fonts.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/fancybox/jquery.fancybox.css' %}" rel="stylesheet">
+    <!-- Optionally add helpers - button, thumbnail and/or media -->
+    <link rel="stylesheet" href="{% static 'vendor/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5' %}" type="text/css" media="screen" />
+    <link rel="stylesheet" href="{% static 'vendor/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7' %}" type="text/css" media="screen" />
+    <link rel="stylesheet" href="{% static 'vendor/owl-carousel/owl.carousel.css' %}">
+    <link rel="stylesheet" href="{% static 'vendor/owl-carousel/owl.theme.css' %}">
     
-    </h3>
-    <p>"Le programme FitFlow de salle de sport offre une approche holistique du bien-être, combinant des séances dynamiques de fitness, de yoga et de méditation. Conçu pour répondre aux besoins variés de chacun, il propose un planning diversifié favorisant la vitalité physique et mentale." </p>
-    <p>Clique pour votre heure adapté </p>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
-    </div>
-    <div class="right">
-    <a href="" class="btn actve-btn">am</a>
-    <a href="" class="btn">pm</a>
-    </div>
-  </div>
+</head>
 
-  </div>
+<body id="page-top">
+
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+                
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-left">
+                <li class="active">
+                        <a class="page-scroll" href="{% url 'SalleDeSport:home' %}">Acceuil</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="{% url 'SalleDeSport:about' %}">À Propos</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="{% url 'SalleDeSport:about' %}">Instructeurs</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="{% url 'SalleDeSport:schedule' %}">Planning</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="{% url 'SalleDeSport:contact_us' %}">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <div class="header-content-inner">
+                <h1 id="homeHeading">Tout ce dont vous avez besoin pour sculpter votre corps <span>culpter votre corps </span></h1>
+                <p>Le CrossFit Box est une salle de CrossFit de niveau élite<br> conçue pour être la meilleure du Moyen-Orient.</p>
+                <a href="#about" class="btn btn-primary btn-xl page-scroll">Plus d'informations sur notre salle</a>
+            </div>
+        </div>
+    </header>
+    <!-- Article Section -->
+<section class="articles">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-sm-6">
+                    <div class="image">
+                        <img src="{% static 'img/image1.png' %}" class="img-responsive" alt="" />
+                        <a href="#">La natation et les CrossFit Games : Pourquoi est-ce le point faible de tout le monde ?</a>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="image">
+                        <img src="{% static 'img/image12.jpg' %}" class="img-responsive" alt="" />
+                        <a href="#">Un film dans le parc :<br />Kung Fu Panda</a>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="image">
+                        <img src="{% static 'img/image11.jpg' %}" class="img-responsive" alt="" />
+                        <a href="#">Un film dans le parc :<br />Kung Fu Panda</a>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 hidden-md hidden-lg">
+                    <div class="image">
+                        <img src="{% static 'img/image13.jpg' %}" class="img-responsive" alt="" />
+                        <a href="#">Un film dans le parc :<br />Kung Fu Panda</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="image">
+                        <img src="{% static 'img/image2.png' %}" class="img-responsive" alt="" />
+                        <a href="#">Un film dans le parc :<br />Kung Fu Panda</a>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 hidden-sm hidden-md">
+                    <div class="image">
+                        <img src="{% static 'img/image13.jpg' %}" class="img-responsive" alt="" />
+                        <a href="#">Un film dans le parc :<br />Kung Fu Panda</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center"><a href="#about" class="btn btn-primary btn-xl page-scroll">LIRE TOUS LES ARTICLES</a></div>
+    </section>
+    <!-- Article Section -->
+
+<section class="work_day">
+    <div class="text-center">
+        <h2>Entraînement du jour</h2>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-sm-6">
+                <div class="item">
+                    <div class="date">samedi 15/11/2016</div>
+                    <div class="image"><img src="{% static 'img/image3.jpg' %}" class="img-responsive" alt=""></div>
+                    <p>Les hommes utilisent une barre de 45 livres et une boîte de 24 pouces. Les femmes utilisent une barre de 35 livres et une boîte de 20 pouces. Postez les répétitions terminées dans les commentaires ou inscrivez-vous pour le Liftoff et enregistrez votre score sur le classement.</p>
+                    <a href="#about" class="btn btn-primary btn-xl page-scroll">En savoir plus</a>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="item">
+                    <div class="date">samedi 15/11/2016</div>
+                    <div class="image"><img src="{% static 'img/image4.jpg' %}" class="img-responsive" alt=""></div>
+                    <p>Les hommes utilisent une barre de 45 livres et une boîte de 24 pouces. Les femmes utilisent une barre de 35 livres et une boîte de 20 pouces. Postez les répétitions terminées dans les commentaires ou inscrivez-vous pour le Liftoff et enregistrez votre score sur le classement.</p>
+                    <a href="#about" class="btn btn-primary btn-xl page-scroll">En savoir plus</a>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="item">
+                    <div class="date">samedi 15/11/2016</div>
+                    <div class="image"><img src="{% static 'img/image5.jpg' %}" class="img-responsive" alt=""></div>
+                    <p>Les hommes utilisent une barre de 45 livres et une boîte de 24 pouces. Les femmes utilisent une barre de 35 livres et une boîte de 20 pouces. Postez les répétitions terminées dans les commentaires ou inscrivez-vous pour le Liftoff et enregistrez votre score sur le classement.</p>
+                    <a href="#about" class="btn btn-primary btn-xl page-scroll">En savoir plus</a>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="item">
+                    <div class="date">samedi 15/11/2016</div>
+                    <div class="image"><img src="{% static 'img/image6.jpg' %}" class="img-responsive" alt=""></div>
+                    <p>Les hommes utilisent une barre de 45 livres et une boîte de 24 pouces. Les femmes utilisent une barre de 35 livres et une boîte de 20 pouces. Postez les répétitions terminées dans les commentaires ou inscrivez-vous pour le Liftoff et enregistrez votre score sur le classement.</p>
+                    <a href="#about" class="btn btn-primary btn-xl page-scroll">En savoir plus</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
-<!--Shedule Sectin End-->
-<!--Blog Section Start -->
-<section class="blog" id="blog">
-  <div class="blog-container">
-    <h1 class="section-title">our blog</h1>
-    <h3 class="section-header">building a community of athletic</h3>
-    <div class="blog-container">
-      <div class="inner">
-        <div class="blog-img">
-          <img src="{% static 'img/visiteur/16.jpeg' %}" alt="">
-          <p>Avez-vous du mal à trouver du temps pour aller à la salle de sport ? Pas de problème ! Dans cet article, nous allons vous montrer comment créer votre propre entraînement FitFlow à la maison, en utilisant des techniques simples mais efficaces.</p>
+
+
+
+
+
+
+    <!-- COACHES SECTION -->
+	<section class="coaches">
+        <div class="text-center">
+            <h2>workout of the day</h2>
         </div>
-      </div>
-      <div class="inner">
-        <div class="blog-img">
-          <img src="{% static 'img/visiteur/14.jpeg' %}" alt="">
-          <p>Chez FitFlow, nous comprenons que l'alimentation joue un rôle crucial dans votre parcours fitness. Dans cet article, découvrez les aliments essentiels que vous devriez intégrer dans votre régime alimentaire pour maximiser les bénéfices de votre entraînement FitFlow.</p>
+        <div class="container">
+            <div id="owl-example" class="owl-carousel slider1">
+                <div class="slide"><a href="#"><p>Guerrilla Man</p><span>Level 1 Certificate</span><img src="{% static 'img/team1.jpg' %}" class="img-responsive"></a></div>
+                <div class="slide"><a href="#"><p>Guerrilla Man</p><span>Level 1 Certificate</span><img src="{% static 'img/team2.jpg' %}" class="img-responsive"></a></div>
+                <div class="slide"><a href="#"><p>Guerrilla Man</p><span>Level 1 Certificate</span><img src="{% static 'img/team3.jpg' %}" class="img-responsive"></a></div>
+                <div class="slide"><a href="#"><p>Guerrilla Man</p><span>Level 1 Certificate</span><img src="{% static 'img/team2.jpg' %}" class="img-responsive"></a></div>
+                <div class="slide"><a href="#"><p>Guerrilla Man</p><span>Level 1 Certificate</span><img src="{% static 'img/team3.jpg' %}" class="img-responsive"></a></div>
+                <div class="slide"><a href="#"><p>Guerrilla Man</p><span>Level 1 Certificate</span><img src="{% static 'img/team1.jpg' %}" class="img-responsive"></a></div>
+                <div class="slide"><a href="#"><p>Guerrilla Man</p><span>Level 1 Certificate</span><img src="{% static 'img/team3.jpg' %}" class="img-responsive"></a></div>
+                <div class="slide"><a href="#"><p>Guerrilla Man</p><span>Level 1 Certificate</span><img src="{% static 'img/team2.jpg' %}" class="img-responsive"></a></div>
+                <div class="slide"><a href="#"><p>Guerrilla Man</p><span>Level 1 Certificate</span><img src="{% static 'img/team1.jpg' %}" class="img-responsive"></a></div>
+            </div>
+            <div class="buttons text-center">
+                <a href="#about" class="btn btn-primary btn-xl page-scroll">GROUP fitness trainers</a>
+                <a href="#about" class="btn btn-primary btn-xl page-scroll">personal trainers</a>
+            </div>
         </div>
-      </div>
-      <div class="inner">
-        <div class="blog-img">
-          <img src="{% static 'img/visiteur/15.jpeg' %}" alt="">
-          <p>Bienvenue sur le blog FitFlow ! Aujourd'hui, nous allons explorer les cinq meilleurs exercices que vous pouvez intégrer dans votre routine de fitness pour sculpter et tonifier votre corps. Ces mouvements simples mais efficaces sont spécialement conçus pour tirer le meilleur parti de votre expérience FitFlow.</p>
+	</section>
+    <!-- COACHES SECTION -->
+
+    <!-- SCHEDULE SECTION -->
+    <section class="schedule">
+        <div class="text-center">
+        <h2>Programme</h2>
         </div>
-      </div>
+        <div class="buttons text-center">
+            <a href="#" id="choice-all" class="btn btn-primary btn-xl">TOUS</a>
+            <a href="#" id="choice-group" class="btn btn-primary btn-xl">Cours en groupe</a>
+            <a href="#" id="choice-kid" class="btn btn-primary btn-xl">Cours pour enfants</a>
+            <a href="#" id="choice-personal" class="btn btn-primary btn-xl">Entraîneurs personnels</a>
+            <a href="#" id="choice-outdoor" class="btn btn-primary btn-xl">Cours en plein air</a>
+        </div>
+        <div class="container">
+            <table class="table">
+              <thead class="hidden-xs">
+                <tr>
+                  <th></th>
+                  <th>Lundi</th>
+                  <th>Mardi</th>
+                  <th>Mercredi</th>
+                  <th>Jeudi</th>
+                  <th>Vendredi</th>
+                  <th>Samedi</th>
+                  <th>Dimanche</th>
+                </tr>
+              </thead>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th class="row hidden-lg">Monday</th>
+                  <th scope="row">7:00 - 7:55</th>
+                  <td><div class="group">YOGA <span>7:00 - 7:55</span></div></td>
+                  <td><div class="kid">outdoor <span>7:00 - 7:55</span></div></td>
+                  <td><div class="group">outdoor <span>7:00 - 7:55</span></div></td>
+                  <td><div class="personal">YOGA <span>7:00 - 7:55</span></div></td>
+                  <td><div class="personal">cycling <span>7:00 - 7:55</span></div></td>
+                  <td><div class="kid">box <span>7:00 - 7:55</span></div></td>
+                  <td><div class="outdoor">cycling <span>7:00 - 7:55</span></div></td>
+                </tr>
+                <tr>
+                  <th class="row hidden-lg">Monday</th>
+                  <th scope="row">8:00 - 8:55</th>
+                  <td><div class="personal">outdoor <span>7:00 - 7:55</span></div></td>
+                  <td><div class="group">YOGA <span>7:00 - 7:55</span></div></td>
+                  <td><div class="outdoor">outdoor <span>7:00 - 7:55</span></div></td>
+                  <td><div class="outdoor">YOGA <span>7:00 - 7:55</span></div></td>
+                  <td><div class="kid">YOGA <span>7:00 - 7:55</span></div></td>
+                  <td><div class="outdoor">box <span>7:00 - 7:55</span></div></td>
+                  <td><div class="outdoor">cycling <span>7:00 - 7:55</span></div></td>
+                </tr>
+                <tr>
+                  <th class="row hidden-lg">Monday</th>
+                  <th scope="row">9:00 - 9:55</th>
+                  <td><div class="personal">pilates <span>7:00 - 7:55</span></div></td>
+                  <td><div class="outdoor">YOGA <span>7:00 - 7:55</span></div></td>
+                  <td><div class="group">outdoor <span>7:00 - 7:55</span></div></td>
+                  <td><div class="kid">YOGA <span>7:00 - 7:55</span></div></td>
+                  <td><div class="outdoor">YOGA <span>7:00 - 7:55</span></div></td>
+                  <td><div class="outdoor">box <span>7:00 - 7:55</span></div></td>
+                  <td><div class="group">cycling <span>7:00 - 7:55</span></div></td>
+                </tr>
+                <tr>
+                  <th class="row hidden-lg">Monday</th>
+                  <th scope="row">10:00 - 10:55</th>
+                  <td><div class="outdoor">cycling <span>7:00 - 7:55</span></div></td>
+                  <td><div class="personal">pilates <span>7:00 - 7:55</span></div></td>
+                  <td><div class="group">outdoor <span>7:00 - 7:55</span></div></td>
+                  <td><div class="group">YOGA <span>7:00 - 7:55</span></div></td>
+                  <td><div class="outdoor">pilates <span>7:00 - 7:55</span></div></td>
+                  <td><div class="kid">box <span>7:00 - 7:55</span></div></td>
+                  <td><div class="group">pilates <span>7:00 - 7:55</span></div></td>
+                </tr>
+                <tr>
+                  <th class="row hidden-lg">Monday</th>
+                  <th scope="row">11:00 - 12:55</th>
+                  <td><div class="personal">outdoor <span>7:00 - 7:55</span></div></td>
+                  <td><div class="group">YOGA <span>7:00 - 7:55</span></div></td>
+                  <td><div class="outdoor">outdoor <span>7:00 - 7:55</span></div></td>
+                  <td><div class="outdoor">YOGA <span>7:00 - 7:55</span></div></td>
+                  <td><div class="kid">YOGA <span>7:00 - 7:55</span></div></td>
+                  <td><div class="outdoor">box <span>7:00 - 7:55</span></div></td>
+                  <td><div class="outdoor">cycling <span>7:00 - 7:55</span></div></td>
+                </tr>
+                <tr>
+                  <th class="row hidden-lg">Monday</th>
+                  <th scope="row">13:00 - 14:55</th>
+                  <td><div class="outdoor">cycling <span>13:00 - 13:55</span></div></td>
+                  <td><div class="personal">pilates <span>13:00 - 13:55</span></div></td>
+                  <td><div class="group">outdoor <span>13:00 - 13:55</span></div></td>
+                  <td><div class="group">YOGA <span>13:00 - 13:55</span></div></td>
+                  <td><div class="outdoor">pilates <span>13:00 - 13:55</span></div></td>
+                  <td><div class="kid">box <span>13:00 - 13:55</span></div></td>
+                  <td><div class="group">pilates <span>13:00 - 13:55</span></div></td>
+                </tr>
+                <tr>
+                  <th class="row hidden-lg">Monday</th>
+                  <th scope="row">15:00 - 15:55</th>
+                  <td><div class="group">YOGA <span>15:00 - 15:55</span></div></td>
+                  <td><div class="kid">outdoor <span>15:00 - 15:55</span></div></td>
+                  <td><div class="group">outdoor <span>15:00 - 15:55</span></div></td>
+                  <td><div class="personal">YOGA <span>15:00 - 15:55</span></div></td>
+                  <td><div class="personal">cycling <span>15:00 - 15:55</span></div></td>
+                  <td><div class="kid">box <span>15:00 - 7:55</span></div></td>
+                  <td><div class="outdoor">cycling <span>15:00 - 15:55</span></div></td>
+                </tr>
+              </tbody>
+            </table>
+        </div>
+    </section>
+    <!-- SCHEDULE SECTION -->
+
+<section class="media">
+    <div class="text-center">
+        <h2>MÉDIAS</h2>
     </div>
-  </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-sm-4 col-xs-12">
+                <div class="block">
+                    <img src="{% static 'img/video1.jpg' %}" class="img-responsive" alt="">
+                    <a class="various fancybox.iframe icon" href="http://www.youtube.com/embed/L9szn1QQfas?autoplay=1"></a>
+                    <div class="info">
+                        <h3>VIDÉO EN VEDETTE</h3>
+                        <span>Publiée le 04/02/2015</span>
+                        <p>L'équipe de dubai ON demand est passée par FitFlow Gold Box pour suivre un cours tôt et découvrir ce que la meilleure installation de fitness du Moyen-Orient a à offrir !</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-12">
+                <div class="block">
+                    <img src="{% static 'img/video2.jpg' %}" class="img-responsive" alt="">
+                    <a class="various fancybox.iframe" href="http://www.youtube.com/embed/L9szn1QQfas?autoplay=1"></a>
+                    <div class="info">
+                        <h3>VIDÉO EN VEDETTE</h3>
+                        <span>Publiée le 04/02/2015</span>
+                        <p>L'équipe de dubai ON demand est passée par FitFlow Gold Box pour suivre un cours tôt et découvrir ce que la meilleure installation de fitness du Moyen-Orient a à offrir !</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-12">
+                <div class="block">
+                    <img src="{% static 'img/video3.jpg' %}" class="img-responsive" alt="">
+                    <a class="various fancybox.iframe" href="https://www.youtube.com/embed/9yYKH9K3xdQ?autoplay=1"></a>
+                    <div class="info">
+                        <h3>VIDÉO EN VEDETTE</h3>
+                        <span>Publiée le 04/02/2015</span>
+                        <p>L'équipe de dubai ON demand est passée par FitFlow Gold Box pour suivre un cours tôt et découvrir ce que la meilleure installation de fitness du Moyen-Orient a à offrir !</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center">
+            <a href="#" class="btn btn-primary btn-xl page-scroll">Voir tous les médias</a>
+        </div>
+    </div>
 </section>
-<!--Blog Section End -->
-<!-- Footer Section Start -->
-<footer class="footer" id="contact">
-<div class="footer-container">
-  <a href="" class="logo">
-    <i class='bx bx-dumbbell'></i>fit<span>flow</span>
-  </a>
-<ul>
-  <li><a href="#">home</a></li>
-  <li><a href="#about">about</a></li>
-  <li><a href="#courses">courses</a></li>
-  <li><a href="#schedule">schedule</a></li>
-  <li><a href="#blog">blog</a></li>
-  <li><a href="#contact">contact</a></li>
-</ul>
 
-<h1>Fllow Us</h1>
-<p>2024 All rights reserved &copy; Projet PACTE</p>
- </div>
-</footer>
+    <section class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-sm-12">
+                <div class="title">
+                    <div class="icon"><img src="img/map_icon1.png' %}" alt=""></div>
+                    <h3>Où <span>nous trouver</span></h3>
+                </div>
+                <p>
+                    <span>Casablanca</span>
+                    <span>Boulevard Ghandi</span>
+                    <span>Rue 12, 22000</span>
+                </p>
+                <p>
+                    <span>téléphone : <b>+4235 4366 13</b></span>
+                    <span>email : <b>example@example.com</b></span>
+                </p>
+                <p>site web : http://www.yourfitclub.com</p>
+            </div>
+            <div class="col-md-3 col-sm-12">
+                <div class="title">
+                    <div class="icon"><img src="{% static 'img/map_icon2.png' %}" alt=""></div>
+                    <h3>carte <span>cadeau</span></h3>
+                </div>
+                <p>Voici un cadeau qui fait vraiment plaisir. Saviez-vous qu'une grande quantité de recherches en psychologie prouve que les expériences rendent les gens plus heureux que les possessions ?</p>
+            </div>
+            <div class="col-md-3 col-sm-12">
+                <div class="title">
+                    <div class="icon"><img src="{% static 'img/map_icon3.png' %}" alt=""></div>
+                    <h3>Quand <span>venir nous voir</span></h3>
+                </div>
+                <p>Commençons !</p>
+                <p>Visitez pendant les heures d'ouverture ou appelez pour prendre un rendez-vous dès aujourd'hui !</p>
+            </div>
+            <div class="col-md-3 col-sm-12">
+            <div class="title">
+                <div class="icon"><img src="{% static 'img/map_icon4.png' %}" alt=""></div>
+                <h3>gratuit <span>obtenez une visite gratuite</span></h3>
+            </div>
+                <p>Chaque membre reçoit un plan de démarrage gratuit et personnalisé lorsqu'il rejoint notre club. Notre personnel amical et professionnel est formé pour vous accompagner tout au long de votre parcours fitness.</p>
+            </div>
+                
+        </div>
+    </div>
+</section>
 
 
-<!-- Footer Section End -->
-<!-- Scroll Top Button -->
-<div class="up">
-  <i class='bx bx-up-arrow-alt'></i>
-</div>
 
 
-<!-- Scroll Top Button -->
-  <!-- Link JS File -->
-  <script src="{% static 'js/script.js' %}"></script>
+
+
+    <section class="bottom_links">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-6 links">
+                <p>C'est bien de partager :</p>
+                <ul>
+                    <li><img src="{% static 'img/social1.png' %}" alt=""></li>
+                    <li><img src="{% static 'img/social2.png' %}" alt=""></li>
+                    <li><img src="{% static 'img/social3.png' %}" alt=""></li>
+                    <li><img src="{% static 'img/social4.png' %}" alt=""></li>
+                    <li><img src="{% static 'img/social5.png' %}" alt=""></li>
+                    <li><img src="{% static 'img/social6.png' %}" alt=""></li>
+                </ul>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                <p>Élu "le meilleur club de fitness de la ville"</p>
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.min.j' %}"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script type="text/javascript" src="{% static 'vendor/fancybox/jquery.mousewheel-3.0.6.pack.js' %}"></script>
+    <script type="text/javascript" src="{% static 'vendor/fancybox/jquery.fancybox.pack.js?v=2.1.5' %}"></script>
+    <script type="text/javascript" src="{% static 'vendor/owl-carousel/owl.carousel.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'vendor/fancybox/jquery.fancybox.js' %}"></script>
+    <script type="text/javascript" src="{% static 'vendor/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5' %}"></script>
+    <script type="text/javascript" src="{% static 'vendor/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6' %}"></script>
+    <script type="text/javascript" src="{% static 'vendor/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7' %}"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="{% static 'js/creative.js' %}"></script>
+
+    
+
 </body>
+
 </html>

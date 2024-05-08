@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import auth, messages
 from .forms import RegistrationForm, LoginForm
 from django.contrib.auth.models import User
@@ -57,37 +57,9 @@ def register(request):
 	return render(request, "account/register.html", {"form": form})
 
 
-"""def login_user(request):
-	if request.method == 'POST':
-		username = request.POST['username',False]
-		password = request.POST['password']
+def edit_password(request, membre_id):
+	membre = get_object_or_404(Membre, pk=membre_id)
+	return render(request, "account/edit_password.html", {'membre': membre, 'message': ''})
 
-		user = authenticate(request, username = username, password = password)
 
-		if user is not None:
-			login(request, user)
-			#print(username)
-			#print(password)
-			return redirect("SalleDeSport:index")
-		else:
-			messages.info(request, "Identifiant ou mot de passe incorrect")
 
-	return render(request, "account/login.html", {})
-
-def logout_user(request):
-	logout(request)
-	return redirect("SalleDeSport:login")
-
-def register_user(request):
-	if request.method == 'POST':
-		form = UserCreationForm(request.POST)
-
-		if form.is_valid():
-			form.save()
-			return redirect("mangalib:index")
-
-	else:
-		form = UserCreationForm()
-
-	return render(request, "account/register.html", {})
-"""
