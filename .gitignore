@@ -1,0 +1,12 @@
+# Ignorer les fichiers de configuration
+config.ini
+
+# Ignorer le dossier de dépendances
+/myenv
+
+# Ignorer les fichiers de sauvegarde temporaires créés par les éditeurs de texte
+*~
+
+# Ignorer les fichiers d'exécution (générés par certains langages de programmation)
+*.exe
+
