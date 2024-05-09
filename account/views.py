@@ -22,6 +22,7 @@ def login(request):
 def logout(request):
     auth.logout(request)
     messages.info(request, 'You have been logged out!!')
+    
     return redirect('SalleDeSport:home')
 
 def register(request):
